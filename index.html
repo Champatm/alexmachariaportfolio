@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Alex Githinji Macharia — Web Developer, Software Developer & Graphic Designer based in Kenya." />
+  <title>Alex Githinji Macharia | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="header">
+    <div class="container nav">
+      <a href="#home" class="logo">AGM</a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#design">Design</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="container hero-content">
+      <p class="hero-greeting">Hello, I'm</p>
+      <h1 class="hero-name">Alex Githinji Macharia</h1>
+      <p class="hero-titles">Web Developer • Software Developer • Graphic Designer</p>
+      <p class="hero-location">📍 Kenya</p>
+      <div class="hero-links">
+        <a href="mailto:alexmacharia004@gmail.com" class="btn btn-primary">Email Me</a>
+        <a href="https://github.com/Champatm" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
+        <a href="https://www.linkedin.com/in/alexmacharia004" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            I am a computing student and aspiring developer who combines technical engineering with visual design. 
+            I build functional, database-driven web applications using PHP, MySQL, and JavaScript, while crafting 
+            clean brand identities and digital graphics using Adobe Illustrator, Photoshop, and Canva.
+          </p>
+          <p>
+            I believe great digital products require both robust backend logic and purposeful, engaging visual design.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Core Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>Web & Frontend</h3>
+          <ul>
+            <li>HTML5</li>
+            <li>CSS3</li>
+            <li>JavaScript</li>
+            <li>DOM Manipulation</li>
+            <li>Responsive Design</li>
+            <li>Form Validation</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>Backend & Databases</h3>
+          <ul>
+            <li>PHP</li>
+            <li>MySQL / MariaDB</li>
+            <li>PDO</li>
+            <li>Sessions & Authentication</li>
+            <li>CRUD Operations</li>
+            <li>ER Diagrams</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>Programming & Systems</h3>
+          <ul>
+            <li>Java (OOP)</li>
+            <li>SQL</li>
+            <li>Computer Networks</li>
+            <li>IPv4</li>
+            <li>OSI Model</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>Design Tools & Branding</h3>
+          <ul>
+            <li>Adobe Illustrator</li>
+            <li>Adobe Photoshop</li>
+            <li>Canva</li>
+            <li>Logo Design</li>
+            <li>Typography</li>
+            <li>Layouts</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <h3>Developer Tools</h3>
+          <ul>
+            <li>VS Code</li>
+            <li>XAMPP</li>
+            <li>phpMyAdmin</li>
+            <li>Git / GitHub</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2 class="section-title">Featured Projects</h2>
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-image">
+            <img src="images/divineart-website.jpg" alt="DivineArtLtd E-commerce Website" />
+          </div>
+          <div class="project-body">
+            <div class="project-number">01</div>
+            <h3>DivineArtLtd — E-commerce Platform</h3>
+            <p class="project-stack">HTML • CSS • JavaScript • PHP • MySQL</p>
+            <p class="project-desc">
+              An online store for construction materials featuring product listings (cement, reinforcement steel, paints), 
+              shopping cart functionality, and a clean, responsive product catalog interface.
+            </p>
+            <p class="project-role">
+              <strong>Role:</strong> Full-stack development and UI design.
+            </p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-body">
+            <div class="project-number">02</div>
+            <h3>Odyssey — Travel Agency Web App</h3>
+            <p class="project-stack">HTML • CSS • JavaScript • PHP • MySQL • PDO</p>
+            <p class="project-desc">
+              A complete travel-focused web application featuring user authentication, profile photo uploads, 
+              password hashing, and dynamic database-driven destination management.
+            </p>
+            <p class="project-role">
+              <strong>Role:</strong> Full-stack design and implementation — from database schema design 
+              to responsive frontend interfaces.
+            </p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-body">
+            <div class="project-number">03</div>
+            <h3>Secure Login & Authentication System</h3>
+            <p class="project-stack">PHP • MySQL • PDO • JavaScript</p>
+            <p class="project-desc">
+              A secure authentication system built to master web security principles. Includes session management, 
+              password hashing, account recovery, and email-based OTP verification.
+            </p>
+            <p class="project-role">
+              <strong>Role:</strong> Backend security implementation and frontend form handling.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Graphic Design / Logos -->
+  <section id="design" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Logo & Brand Design</h2>
+      <p class="section-intro">
+        Selected logo and brand identity work — clean, memorable marks built for real businesses.
+      </p>
+      <div class="gallery-grid">
+        <figure class="gallery-item">
+          <div class="gallery-img-wrap">
+            <img src="images/boba-logo.jpg" alt="BOBA Logo - Bubble tea brand" />
+          </div>
+          <figcaption>
+            <strong>BOBA</strong>
+            <span>Bubble Tea Brand • Est. 2020</span>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="gallery-img-wrap">
+            <img src="images/pressco-logo.jpg" alt="PRESSCO Logo - Print Design Packaging" />
+          </div>
+          <figcaption>
+            <strong>PRESSCO.</strong>
+            <span>Print • Design • Packaging</span>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="gallery-img-wrap gallery-img-red">
+            <img src="images/shisa-nyama-logo.jpg" alt="SHISA NYAMA Logo - Braai & Grill" />
+          </div>
+          <figcaption>
+            <strong>SHISA NYAMA</strong>
+            <span>Braai & Grill</span>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item">
+          <div class="gallery-img-wrap">
+            <img src="images/wagtech-logo.jpg" alt="WAGTECH AFRICA LIMITED Logo" />
+          </div>
+          <figcaption>
+            <strong>WAGTECH AFRICA</strong>
+            <span>Water • Environment • Agriculture • Health</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education" class="section">
+    <div class="container">
+      <h2 class="section-title">Education & Continuous Learning</h2>
+      <div class="education-card">
+        <h3>Computing & Information Technology</h3>
+        <p class="edu-school">The Co-operative University of Kenya</p>
+        <p class="edu-focus">
+          <strong>Core Focus:</strong> Database Management, Software Engineering, Networks, 
+          and Internet Application Programming.
+        </p>
+        <p class="edu-style">
+          <strong>Learning Style:</strong> Hands-on builder — progressing from fundamental HTML/CSS 
+          and JavaScript to advanced backend architecture and branding.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section section-alt contact-section">
+    <div class="container">
+      <h2 class="section-title">Let's Connect</h2>
+      <p class="contact-intro">
+        Open to web development, software engineering, UI/frontend roles, technical internships, and freelance projects.
+      </p>
+      <div class="contact-links">
+        <a href="mailto:alexmacharia004@gmail.com" class="contact-item">
+          <span class="contact-label">Email</span>
+          <span class="contact-value">alexmacharia004@gmail.com</span>
+        </a>
+        <a href="https://github.com/Champatm" target="_blank" rel="noopener" class="contact-item">
+          <span class="contact-label">GitHub</span>
+          <span class="contact-value">github.com/Champatm</span>
+        </a>
+        <a href="https://www.linkedin.com/in/alexmacharia004" target="_blank" rel="noopener" class="contact-item">
+          <span class="contact-label">LinkedIn</span>
+          <span class="contact-value">alexmacharia004</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="year"></span> Alex Githinji Macharia. Built with care.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
