@@ -1,287 +1,409 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Alex Githinji Macharia — Web Developer, Software Developer & Graphic Designer based in Kenya." />
-  <title>Alex Githinji Macharia | Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alex Githinji Macharia | Portfolio</title>
+<meta name="description" content="Alex Githinji Macharia — Software Developer, Web Developer & Graphic Designer based in Kenya.">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Alex Githinji Macharia | Software Developer & Graphic Designer">
+<meta property="og:description" content="Software Developer and Graphic Designer based in Kenya. PHP/MySQL full-stack web apps + brand identity design.">
+<meta property="og:image" content="https://alexmachariaportfolio.netlify.app/images/profile.jpg">
+<meta property="og:url" content="https://alexmachariaportfolio.netlify.app/">
+<meta property="og:site_name" content="Alex Githinji Macharia Portfolio">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Alex Githinji Macharia | Software Developer & Graphic Designer">
+<meta name="twitter:description" content="Software Developer and Graphic Designer based in Kenya.">
+<meta name="twitter:image" content="https://alexmachariaportfolio.netlify.app/images/profile.jpg">
+
+<link rel="icon" type="image/png" href="/images/favicon.png">
+
+<style>
+  :root {
+    --cream: #f5f1e8;
+    --cream-alt: #efe8d8;
+    --brown-dark: #4a3728;
+    --brown: #7a5c3e;
+    --brown-light: #a9835c;
+    --white: #ffffff;
+    --border: #ddd2ba;
+    --max-width: 880px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: var(--cream);
+    color: var(--brown-dark);
+    line-height: 1.6;
+  }
+
+  h1, h2, h3 { font-family: 'Georgia', serif; font-weight: 700; color: var(--brown-dark); }
+
+  a { color: var(--brown); }
+
+  .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+
+  /* Nav */
+  nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 24px; border-bottom: 1px solid var(--border);
+    position: sticky; top: 0; background: var(--cream); z-index: 10;
+  }
+  nav .logo { font-size: 1.2rem; font-weight: 700; text-decoration: none; color: var(--brown-dark); }
+  nav ul { list-style: none; display: flex; gap: 24px; }
+  nav ul a { text-decoration: none; color: var(--brown-dark); font-size: 0.95rem; }
+  nav ul a:hover { color: var(--brown); }
+
+  /* Hero */
+  .hero { text-align: center; padding: 64px 24px 48px; }
+  .hero img {
+    width: 140px; height: 140px; border-radius: 50%; object-fit: cover;
+    border: 3px solid var(--white); box-shadow: 0 2px 12px rgba(74,55,40,0.15);
+    margin-bottom: 20px;
+  }
+  .hero .greeting { color: var(--brown); font-size: 1rem; margin-bottom: 4px; }
+  .hero h1 { font-size: 2.4rem; margin-bottom: 8px; }
+  .hero .role { font-size: 1.1rem; color: var(--brown); margin-bottom: 8px; }
+  .hero .location { color: #7a6a55; margin-bottom: 24px; }
+  .hero-links { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  .hero-links a {
+    padding: 10px 20px; border-radius: 6px; text-decoration: none; font-size: 0.92rem;
+    border: 1px solid var(--brown);
+  }
+  .hero-links a.primary { background: var(--brown); color: var(--white); }
+  .hero-links a.secondary { background: transparent; color: var(--brown); }
+  .hero-links a:hover { opacity: 0.85; }
+
+  section { padding: 48px 24px; border-top: 1px solid var(--border); }
+  section h2 { font-size: 1.6rem; margin-bottom: 24px; text-align: center; }
+  section .inner { max-width: var(--max-width); margin: 0 auto; }
+
+  /* About */
+  .about p { max-width: 680px; margin: 0 auto 16px; font-size: 1.02rem; }
+
+  /* Skills */
+  .skills-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px; max-width: var(--max-width); margin: 0 auto;
+  }
+  .skill-card {
+    background: var(--white); border: 1px solid var(--border); border-radius: 8px;
+    padding: 18px 20px;
+  }
+  .skill-card h3 { font-size: 1rem; margin-bottom: 10px; color: var(--brown); }
+  .skill-card ul { list-style: none; }
+  .skill-card li { font-size: 0.92rem; padding: 3px 0; color: var(--brown-dark); }
+
+  /* Project filters */
+  .project-filters {
+    display: flex; gap: 10px; justify-content: center; margin-bottom: 32px; flex-wrap: wrap;
+  }
+  .filter-btn {
+    padding: 6px 16px; border-radius: 20px; border: 1px solid var(--brown);
+    background: transparent; color: var(--brown); cursor: pointer; font-size: 0.9rem;
+    font-family: inherit;
+  }
+  .filter-btn.active { background: var(--brown); color: var(--white); }
+
+  /* Projects */
+  .project-card {
+    background: var(--white); border: 1px solid var(--border); border-radius: 10px;
+    overflow: hidden; margin-bottom: 28px;
+  }
+  .project-card img { width: 100%; display: block; }
+  .project-body { padding: 24px; }
+  .project-num { font-size: 0.85rem; color: var(--brown-light); }
+  .project-card h3 { font-size: 1.25rem; margin: 4px 0 6px; }
+  .tech-tags { color: var(--brown); font-size: 0.88rem; margin-bottom: 12px; }
+  .project-card p.desc { font-size: 0.96rem; margin-bottom: 10px; }
+  .project-card p.role { font-size: 0.92rem; color: #6b5c48; margin-bottom: 16px; }
+
+  .project-links { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-demo, .btn-code {
+    padding: 8px 16px; border-radius: 6px; font-size: 0.88rem;
+    text-decoration: none; font-weight: 600; transition: opacity 0.2s ease;
+  }
+  .btn-demo { background: var(--brown); color: var(--white); }
+  .btn-code { background: transparent; border: 1px solid var(--brown); color: var(--brown); }
+  .btn-demo:hover, .btn-code:hover { opacity: 0.8; }
+
+  /* Logo grid */
+  .logo-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px; max-width: var(--max-width); margin: 0 auto;
+  }
+  .logo-card {
+    background: var(--white); border: 1px solid var(--border); border-radius: 8px;
+    padding: 24px; text-align: center;
+  }
+  .logo-card img { max-width: 100%; max-height: 140px; margin-bottom: 14px; }
+  .logo-card .name { font-weight: 700; margin-bottom: 4px; }
+  .logo-card .tagline { font-size: 0.88rem; color: #7a6a55; }
+
+  /* Education */
+  .edu-card {
+    background: var(--white); border: 1px solid var(--border); border-radius: 8px;
+    padding: 24px; max-width: var(--max-width); margin: 0 auto;
+  }
+  .edu-card h3 { font-size: 1.1rem; }
+  .edu-card .school { color: var(--brown); margin-bottom: 12px; }
+
+  /* Contact / Footer */
+  .contact { text-align: center; }
+  .contact-links { display: flex; gap: 20px; justify-content: center; margin-top: 16px; flex-wrap: wrap; }
+  .contact-links a { text-decoration: none; font-size: 0.95rem; }
+
+  footer {
+    background: var(--brown-dark); color: var(--cream); text-align: center;
+    padding: 20px; font-size: 0.88rem;
+  }
+
+  @media (max-width: 600px) {
+    nav ul { gap: 14px; font-size: 0.85rem; }
+    .hero h1 { font-size: 1.8rem; }
+  }
+</style>
 </head>
 <body>
-  <!-- Navigation -->
-  <header class="header">
-    <div class="container nav">
-      <a href="#home" class="logo">AGM</a>
-      <nav class="nav-links" id="navLinks">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a>
-        <a href="#design">Design</a>
-        <a href="#education">Education</a>
-        <a href="#contact">Contact</a>
-      </nav>
-      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
 
-  <!-- Hero -->
-  <section id="home" class="hero">
-    <div class="container hero-content">
-      <p class="hero-greeting">Hello, I'm</p>
-      <h1 class="hero-name">Alex Githinji Macharia</h1>
-      <p class="hero-titles">Web Developer • Software Developer • Graphic Designer</p>
-      <p class="hero-location">📍 Kenya</p>
-      <div class="hero-links">
-        <a href="mailto:alexmacharia004@gmail.com" class="btn btn-primary">Email Me</a>
-        <a href="https://github.com/Champatm" target="_blank" rel="noopener" class="btn btn-outline">GitHub</a>
-        <a href="https://www.linkedin.com/in/alexmacharia004" target="_blank" rel="noopener" class="btn btn-outline">LinkedIn</a>
+<nav>
+  <a href="#home" class="logo">AGM</a>
+  <ul>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#design">Design</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="hero" id="home">
+  <img src="images/profile.jpg" alt="Alex Githinji Macharia">
+  <div class="greeting">Hello, I'm</div>
+  <h1>Alex Githinji Macharia</h1>
+  <div class="role">Software Developer • Web Developer • Graphic Designer</div>
+  <div class="location">📍 Kenya</div>
+  <div class="hero-links">
+    <a href="mailto:alexmacharia004@gmail.com" class="secondary">Email Me</a>
+    <a href="https://github.com/Champatm" target="_blank" class="secondary">GitHub</a>
+    <a href="https://www.linkedin.com/in/alexmacharia004" target="_blank" class="secondary">LinkedIn</a>
+    <a href="/Alex_Githinji_Macharia_Portfolio_2.pdf" target="_blank" download class="primary">📄 Download Resume</a>
+  </div>
+</div>
+
+<section id="about" class="about">
+  <div class="inner">
+    <h2>About Me</h2>
+    <p>
+      I am a Software Developer and Graphic Designer who combines technical
+      engineering with visual design. I build functional, database-driven web
+      applications using PHP, MySQL, and JavaScript, while crafting clean
+      brand identities and digital graphics using Adobe Illustrator, Photoshop,
+      and Canva.
+    </p>
+    <p>
+      I believe great digital products require both robust backend logic and
+      purposeful, engaging visual design.
+    </p>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="inner">
+    <h2>Core Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h3>Web & Frontend</h3>
+        <ul>
+          <li>HTML5, CSS3, JavaScript</li>
+          <li>DOM Manipulation</li>
+          <li>Responsive Design</li>
+          <li>Form Validation</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>Backend & Databases</h3>
+        <ul>
+          <li>PHP, MySQL / MariaDB</li>
+          <li>PDO, Sessions & Auth</li>
+          <li>CRUD Operations</li>
+          <li>ER Diagrams</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>CS Fundamentals</h3>
+        <ul>
+          <li>Java (OOP), SQL</li>
+          <li>Computer Networks</li>
+          <li>Networking (IPv4, OSI Model)</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>Design Tools & Branding</h3>
+        <ul>
+          <li>Adobe Illustrator, Photoshop</li>
+          <li>Canva, Logo Design</li>
+          <li>Typography & Layouts</li>
+        </ul>
+      </div>
+      <div class="skill-card">
+        <h3>Developer Tools</h3>
+        <ul>
+          <li>VS Code, XAMPP</li>
+          <li>phpMyAdmin</li>
+          <li>Git / GitHub</li>
+        </ul>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- About -->
-  <section id="about" class="section">
-    <div class="container">
-      <h2 class="section-title">About Me</h2>
-      <div class="about-grid">
-        <div class="about-text">
-          <p>
-            I am a computing student and aspiring developer who combines technical engineering with visual design. 
-            I build functional, database-driven web applications using PHP, MySQL, and JavaScript, while crafting 
-            clean brand identities and digital graphics using Adobe Illustrator, Photoshop, and Canva.
-          </p>
-          <p>
-            I believe great digital products require both robust backend logic and purposeful, engaging visual design.
-          </p>
-        </div>
-      </div>
+<section id="projects">
+  <div class="inner">
+    <h2>Featured Projects</h2>
+
+    <div class="project-filters">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="webapp">Web Apps</button>
+      <button class="filter-btn" data-filter="security">Security</button>
     </div>
-  </section>
 
-  <!-- Skills -->
-  <section id="skills" class="section section-alt">
-    <div class="container">
-      <h2 class="section-title">Core Skills</h2>
-      <div class="skills-grid">
-        <div class="skill-card">
-          <h3>Web & Frontend</h3>
-          <ul>
-            <li>HTML5</li>
-            <li>CSS3</li>
-            <li>JavaScript</li>
-            <li>DOM Manipulation</li>
-            <li>Responsive Design</li>
-            <li>Form Validation</li>
-          </ul>
-        </div>
-        <div class="skill-card">
-          <h3>Backend & Databases</h3>
-          <ul>
-            <li>PHP</li>
-            <li>MySQL / MariaDB</li>
-            <li>PDO</li>
-            <li>Sessions & Authentication</li>
-            <li>CRUD Operations</li>
-            <li>ER Diagrams</li>
-          </ul>
-        </div>
-        <div class="skill-card">
-          <h3>Programming & Systems</h3>
-          <ul>
-            <li>Java (OOP)</li>
-            <li>SQL</li>
-            <li>Computer Networks</li>
-            <li>IPv4</li>
-            <li>OSI Model</li>
-          </ul>
-        </div>
-        <div class="skill-card">
-          <h3>Design Tools & Branding</h3>
-          <ul>
-            <li>Adobe Illustrator</li>
-            <li>Adobe Photoshop</li>
-            <li>Canva</li>
-            <li>Logo Design</li>
-            <li>Typography</li>
-            <li>Layouts</li>
-          </ul>
-        </div>
-        <div class="skill-card">
-          <h3>Developer Tools</h3>
-          <ul>
-            <li>VS Code</li>
-            <li>XAMPP</li>
-            <li>phpMyAdmin</li>
-            <li>Git / GitHub</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects" class="section">
-    <div class="container">
-      <h2 class="section-title">Featured Projects</h2>
-      <div class="projects-grid">
-        <article class="project-card">
-          <div class="project-image">
-            <img src="images/divineart-website.jpg" alt="DivineArtLtd E-commerce Website" />
-          </div>
-          <div class="project-body">
-            <div class="project-number">01</div>
-            <h3>DivineArtLtd — E-commerce Platform</h3>
-            <p class="project-stack">HTML • CSS • JavaScript • PHP • MySQL</p>
-            <p class="project-desc">
-              An online store for construction materials featuring product listings (cement, reinforcement steel, paints), 
-              shopping cart functionality, and a clean, responsive product catalog interface.
-            </p>
-            <p class="project-role">
-              <strong>Role:</strong> Full-stack development and UI design.
-            </p>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-body">
-            <div class="project-number">02</div>
-            <h3>Odyssey — Travel Agency Web App</h3>
-            <p class="project-stack">HTML • CSS • JavaScript • PHP • MySQL • PDO</p>
-            <p class="project-desc">
-              A complete travel-focused web application featuring user authentication, profile photo uploads, 
-              password hashing, and dynamic database-driven destination management.
-            </p>
-            <p class="project-role">
-              <strong>Role:</strong> Full-stack design and implementation — from database schema design 
-              to responsive frontend interfaces.
-            </p>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <div class="project-body">
-            <div class="project-number">03</div>
-            <h3>Secure Login & Authentication System</h3>
-            <p class="project-stack">PHP • MySQL • PDO • JavaScript</p>
-            <p class="project-desc">
-              A secure authentication system built to master web security principles. Includes session management, 
-              password hashing, account recovery, and email-based OTP verification.
-            </p>
-            <p class="project-role">
-              <strong>Role:</strong> Backend security implementation and frontend form handling.
-            </p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Graphic Design / Logos -->
-  <section id="design" class="section section-alt">
-    <div class="container">
-      <h2 class="section-title">Logo & Brand Design</h2>
-      <p class="section-intro">
-        Selected logo and brand identity work — clean, memorable marks built for real businesses.
-      </p>
-      <div class="gallery-grid">
-        <figure class="gallery-item">
-          <div class="gallery-img-wrap">
-            <img src="images/boba-logo.jpg" alt="BOBA Logo - Bubble tea brand" />
-          </div>
-          <figcaption>
-            <strong>BOBA</strong>
-            <span>Bubble Tea Brand • Est. 2020</span>
-          </figcaption>
-        </figure>
-
-        <figure class="gallery-item">
-          <div class="gallery-img-wrap">
-            <img src="images/pressco-logo.jpg" alt="PRESSCO Logo - Print Design Packaging" />
-          </div>
-          <figcaption>
-            <strong>PRESSCO.</strong>
-            <span>Print • Design • Packaging</span>
-          </figcaption>
-        </figure>
-
-        <figure class="gallery-item">
-          <div class="gallery-img-wrap gallery-img-red">
-            <img src="images/shisa-nyama-logo.jpg" alt="SHISA NYAMA Logo - Braai & Grill" />
-          </div>
-          <figcaption>
-            <strong>SHISA NYAMA</strong>
-            <span>Braai & Grill</span>
-          </figcaption>
-        </figure>
-
-        <figure class="gallery-item">
-          <div class="gallery-img-wrap">
-            <img src="images/wagtech-logo.jpg" alt="WAGTECH AFRICA LIMITED Logo" />
-          </div>
-          <figcaption>
-            <strong>WAGTECH AFRICA</strong>
-            <span>Water • Environment • Agriculture • Health</span>
-          </figcaption>
-        </figure>
-      </div>
-    </div>
-  </section>
-
-  <!-- Education -->
-  <section id="education" class="section">
-    <div class="container">
-      <h2 class="section-title">Education & Continuous Learning</h2>
-      <div class="education-card">
-        <h3>Computing & Information Technology</h3>
-        <p class="edu-school">The Co-operative University of Kenya</p>
-        <p class="edu-focus">
-          <strong>Core Focus:</strong> Database Management, Software Engineering, Networks, 
-          and Internet Application Programming.
+    <div class="project-card" data-category="webapp">
+      <img src="images/divineart-website-v2.jpg" alt="DivineArtLtd Website - Services & Construction">
+      <div class="project-body">
+        <div class="project-num">01</div>
+        <h3>DivineArtLtd — Construction Services Website</h3>
+        <p class="tech-tags">HTML • CSS • JavaScript • PHP • MySQL</p>
+        <p class="desc">
+          A professional website for a construction company featuring service
+          categories (Building & Construction, Renovation, Plumbing, Electrical),
+          shopping cart, and a clean modern interface showcasing licensed teams
+          and transparent pricing.
         </p>
-        <p class="edu-style">
-          <strong>Learning Style:</strong> Hands-on builder — progressing from fundamental HTML/CSS 
-          and JavaScript to advanced backend architecture and branding.
+        <p class="role"><strong>Role:</strong> Full-stack development and UI design.</p>
+        <div class="project-links">
+          <!-- TODO: replace with your real demo/repo URLs -->
+          <a href="#" target="_blank" class="btn-demo">Live Demo →</a>
+          <a href="https://github.com/Champatm" target="_blank" class="btn-code">View Code →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card" data-category="webapp">
+      <div class="project-body">
+        <div class="project-num">02</div>
+        <h3>Odyssey — Travel Agency Web App</h3>
+        <p class="tech-tags">HTML • CSS • JavaScript • PHP • MySQL • PDO</p>
+        <p class="desc">
+          A complete travel-focused web application featuring user authentication,
+          profile photo uploads, password hashing, and dynamic database-driven
+          destination management.
         </p>
+        <p class="role"><strong>Role:</strong> Full-stack design and implementation — from database schema to responsive frontend.</p>
+        <div class="project-links">
+          <a href="#" target="_blank" class="btn-demo">Live Demo →</a>
+          <a href="https://github.com/Champatm" target="_blank" class="btn-code">View Code →</a>
+        </div>
       </div>
     </div>
-  </section>
 
-  <!-- Contact -->
-  <section id="contact" class="section section-alt contact-section">
-    <div class="container">
-      <h2 class="section-title">Let's Connect</h2>
-      <p class="contact-intro">
-        Open to web development, software engineering, UI/frontend roles, technical internships, and freelance projects.
-      </p>
-      <div class="contact-links">
-        <a href="mailto:alexmacharia004@gmail.com" class="contact-item">
-          <span class="contact-label">Email</span>
-          <span class="contact-value">alexmacharia004@gmail.com</span>
-        </a>
-        <a href="https://github.com/Champatm" target="_blank" rel="noopener" class="contact-item">
-          <span class="contact-label">GitHub</span>
-          <span class="contact-value">github.com/Champatm</span>
-        </a>
-        <a href="https://www.linkedin.com/in/alexmacharia004" target="_blank" rel="noopener" class="contact-item">
-          <span class="contact-label">LinkedIn</span>
-          <span class="contact-value">alexmacharia004</span>
-        </a>
+    <div class="project-card" data-category="security">
+      <div class="project-body">
+        <div class="project-num">03</div>
+        <h3>Secure Login & Authentication System</h3>
+        <p class="tech-tags">PHP • MySQL • PDO • JavaScript</p>
+        <p class="desc">
+          A secure authentication system built to master web security principles.
+          Includes session management, password hashing, account recovery, and
+          email-based OTP verification.
+        </p>
+        <p class="role"><strong>Role:</strong> Backend security implementation and frontend form handling.</p>
+        <div class="project-links">
+          <a href="https://github.com/Champatm" target="_blank" class="btn-code">View Code →</a>
+        </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <p>© <span id="year"></span> Alex Githinji Macharia. Built with care.</p>
+<section id="design">
+  <div class="inner">
+    <h2>Logo & Brand Design</h2>
+    <div class="logo-grid">
+      <div class="logo-card">
+        <img src="images/boba-logo.jpg" alt="BOBA Logo - Bubble tea brand">
+        <div class="name">BOBA</div>
+        <div class="tagline">Bubble Tea Brand • Est. 2020</div>
+      </div>
+      <div class="logo-card">
+        <img src="images/pressco-logo.jpg" alt="PRESSCO Logo - Print Design Packaging">
+        <div class="name">PRESSCO.</div>
+        <div class="tagline">Print • Design • Packaging</div>
+      </div>
+      <div class="logo-card">
+        <img src="images/shisa-nyama-logo.jpg" alt="SHISA NYAMA Logo - Braai & Grill">
+        <div class="name">SHISA NYAMA</div>
+        <div class="tagline">Braai & Grill</div>
+      </div>
+      <div class="logo-card">
+        <img src="images/wagtech-logo.jpg" alt="WAGTECH AFRICA LIMITED Logo">
+        <div class="name">WAGTECH AFRICA</div>
+        <div class="tagline">Water • Environment • Agriculture • Health</div>
+      </div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script src="script.js"></script>
+<section id="education">
+  <div class="inner">
+    <h2>Education & Continuous Learning</h2>
+    <div class="edu-card">
+      <h3>Computing & Information Technology</h3>
+      <div class="school">The Co-operative University of Kenya</div>
+      <p><strong>Core Focus:</strong> Database Management, Software Engineering, Networks, and Internet Application Programming.</p>
+      <p><strong>Learning Style:</strong> Hands-on builder — progressing from fundamental HTML/CSS and JavaScript to advanced backend architecture and branding.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="inner">
+    <h2>Let's Connect</h2>
+    <p>Open to web development, software engineering, UI/frontend roles, technical internships, and freelance projects.</p>
+    <div class="contact-links">
+      <a href="mailto:alexmacharia004@gmail.com">Email alexmacharia004@gmail.com</a>
+      <a href="https://github.com/Champatm" target="_blank">GitHub github.com/Champatm</a>
+      <a href="https://www.linkedin.com/in/alexmacharia004" target="_blank">LinkedIn alexmacharia004</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © Alex Githinji Macharia. Built with care.
+</footer>
+
+<script>
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const cards = document.querySelectorAll('.project-card');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      cards.forEach(card => {
+        const show = filter === 'all' || card.dataset.category === filter;
+        card.style.display = show ? '' : 'none';
+      });
+    });
+  });
+</script>
+
 </body>
-</html>
+  </html>
