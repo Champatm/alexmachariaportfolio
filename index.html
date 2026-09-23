@@ -49,17 +49,6 @@
 
   .container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
 
-  /* Nav */
-  nav {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 20px 24px; border-bottom: 1px solid var(--border);
-    position: sticky; top: 0; background: var(--cream); z-index: 10;
-  }
-  nav .logo { font-size: 1.2rem; font-weight: 700; text-decoration: none; color: var(--brown-dark); }
-  nav ul { list-style: none; display: flex; gap: 24px; }
-  nav ul a { text-decoration: none; color: var(--brown-dark); font-size: 0.95rem; }
-  nav ul a:hover { color: var(--brown); }
-
   /* Hero */
   .hero { text-align: center; padding: 64px 24px 48px; }
   .hero img {
@@ -165,24 +154,11 @@
   }
 
   @media (max-width: 600px) {
-    nav ul { gap: 14px; font-size: 0.85rem; }
     .hero h1 { font-size: 1.8rem; }
   }
 </style>
 </head>
 <body>
-
-<nav>
-  <a href="#home" class="logo">AGM</a>
-  <ul>
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#design">Design</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
 
 <div class="hero" id="home">
   <img src="images/profile.jpg" alt="Alex Githinji Macharia">
@@ -289,8 +265,6 @@
         </p>
         <p class="role"><strong>Role:</strong> Full-stack development and UI design.</p>
         <div class="project-links">
-          <!-- TODO: replace with your real demo/repo URLs -->
-          <a href="#" target="_blank" class="btn-demo">Live Demo →</a>
           <a href="https://github.com/Champatm" target="_blank" class="btn-code">View Code →</a>
         </div>
       </div>
@@ -308,7 +282,6 @@
         </p>
         <p class="role"><strong>Role:</strong> Full-stack design and implementation — from database schema to responsive frontend.</p>
         <div class="project-links">
-          <a href="#" target="_blank" class="btn-demo">Live Demo →</a>
           <a href="https://github.com/Champatm" target="_blank" class="btn-code">View Code →</a>
         </div>
       </div>
